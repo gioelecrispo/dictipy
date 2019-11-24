@@ -1,1 +1,1 @@
-from dictipy.utils import get_dict
+from dictipy.dict_maker import get_dict

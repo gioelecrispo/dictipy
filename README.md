@@ -3,6 +3,12 @@
 Dictipy creates the right dict also for nested objects using recursion, whenever the standard
 Python ```__dict__()``` cannot. 
 
+![Python 2.7, 3.4, 3.5, 3.6, 3.7, 3.8](https://img.shields.io/badge/python-%202.7%2C%203.4%2C%203.5%2C%203.6%2C%203.7%2C%203.8-blue.svg)
+[![PyPI version](https://badge.fury.io/py/dictipy.svg)](https://badge.fury.io/py/dictipy)
+[![Build Status](https://travis-ci.org/gioelecrispo/dictipy.svg?branch=master)](https://travis-ci.org/gioelecrispo/dictipy)
+[![codecov](https://codecov.io/gh/gioelecrispo/dictipy/branch/master/graph/badge.svg)](https://codecov.io/gh/gioelecrispo/dictipy)
+
+
 ## Table of contents
 1. Motivation
 2. Usage
