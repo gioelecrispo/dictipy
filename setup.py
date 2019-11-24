@@ -11,7 +11,7 @@ def clean_dist():
 
 
 def read_file(file_name):
-    return open(os.path.join(os.path.dirname(__file__), file_name), encoding="utf-8").read()
+    return open(os.path.join(os.path.dirname(__file__), file_name)).read()
 
 
 def upload_to_pypi():
