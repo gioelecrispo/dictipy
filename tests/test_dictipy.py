@@ -7,7 +7,7 @@ class SimpleObject:
         self.value = 1
 
 
-def test_very_complex_object():
+def test_simple_object():
     so = SimpleObject()
     assert get_dict(so) == {'value': 1}
 
