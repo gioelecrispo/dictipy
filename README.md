@@ -3,7 +3,7 @@
 Dictipy creates the right dict also for nested objects using recursion, whenever the standard
 Python ```__dict__()``` cannot. 
 
-![Python 2.7, 3.4, 3.5, 3.6, 3.7, 3.8](https://img.shields.io/badge/python-%202.7%2C%203.4%2C%203.5%2C%203.6%2C%203.7%2C%203.8-blue.svg)
+![Python 2.7, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 3.10, 3.11](https://img.shields.io/badge/python-%202.7%2C%203.4%2C%203.5%2C%203.6%2C%203.7%2C%203.8%2C%203.9%2C%203.10%2C%203.11-blue.svg)
 [![PyPI version](https://badge.fury.io/py/dictipy.svg)](https://badge.fury.io/py/dictipy)
 [![Build Status](https://travis-ci.org/gioelecrispo/dictipy.svg?branch=master)](https://travis-ci.org/gioelecrispo/dictipy)
 [![codecov](https://codecov.io/gh/gioelecrispo/dictipy/branch/master/graph/badge.svg)](https://codecov.io/gh/gioelecrispo/dictipy)
@@ -28,7 +28,7 @@ Simply import ```get_dict``` function from ```dictipy``` and use it on any poten
 ---
 Example 1: Nested objects.
 ```python
-from dictipy import get_dict
+from dictipy import dictipy
 
 
 class Parent:
@@ -47,19 +47,21 @@ class Child:
 if __name__ == "__main__":
     p = Parent(0)
     print("Standard Python dict:  ", p.__dict__)
-    print("Dictipy get_dict:      ", get_dict(p))
+    print("Python vars:  ", vars(p))
+    print("Dictipy get_dict:      ", dictipy(p))
 ```
 
 Result: 
 ```python
 Standard Python dict:   {'parent_field': 0, 'child': <__main__.Child object at 0x0000021C530BFEB8>}
+Python vars:   {'parent_field': 0, 'child': <__main__.Child object at 0x0000021C530BFEB8>}
 Dictipy get_dict:       {'parent_field': 0, 'child': {'child_field': 1}}
 ```
 
 --- 
 Example 2: Json serialization.
 ```python
-from dictipy import get_dict
+from dictipy import dictipy
 import json
 
 
@@ -80,5 +82,6 @@ if __name__ == "__main__":
     p = Parent(0)
     j1 = json.dumps(p) # throws -> TypeError: Object of type Parent is not JSON serializable
     j2 = json.dumps(p.__dict__) # throws -> TypeError: Object of type Child is not JSON serializable
-    j3 = json.dumps(get_dict(p)) # returns -> '{"parent_field": 0, "child": {"child_field": 1}}'
+    j3 = json.dumps(vars(p)) # throws -> TypeError: Object of type Child is not JSON serializable
+    j4 = json.dumps(dictipy(p)) # returns -> '{"parent_field": 0, "child": {"child_field": 1}}'
 ```

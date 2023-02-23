@@ -1,4 +1,4 @@
-from dictipy import get_dict
+from dictipy import dictipy
 import json
 
 
@@ -20,7 +20,8 @@ class Child:
 if __name__ == "__main__":
     p = Parent(0)
     print("Standard Python dict:  ", p.__dict__)
-    print("Dictipy get_dict:      ", get_dict(p))
+    print("Python vars:  ", vars(p))
+    print("Dictipy get_dict:      ", dictipy(p))
 
     # j1 = json.dumps(p)  # throws -> TypeError: Object of type Parent is not JSON serializable
     # j2 = json.dumps(p.__dict__)  # throws -> TypeError: Object of type Child is not JSON serializable

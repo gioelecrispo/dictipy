@@ -23,7 +23,7 @@ clean_dist()
 
 setup(
     name='dictipy',
-    version="0.0.3",
+    version="0.0.4",
     author='Gioele Crispo',
     author_email='crispogioele@gmail.com',
     package_dir={'dictipy': 'dictipy'},
