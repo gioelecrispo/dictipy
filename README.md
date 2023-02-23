@@ -23,7 +23,7 @@ The ```json.dumps()``` cannot execute the task if the argument object is not a d
 standard Python ```__dict__()``` function does not solve the problem if a nested object has to be considered.
 
 ## 2. Usage
-Simply import ```get_dict``` function from ```dictipy``` and use it on any potentially serializable object.
+Simply import ```dictipy``` function from ```dictipy``` and use it on any potentially serializable object.
 
 ---
 Example 1: Nested objects.
